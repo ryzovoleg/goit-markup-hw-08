@@ -1,0 +1,17 @@
+body {
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
+  }
+  
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+  
+  .section__title {
+    margin-bottom: 50px;
+  
+    @include font(36px, 700, 1.17, 0.03em);
+    text-align: center;
+    color: var(--primary-font-color);
+}

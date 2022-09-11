@@ -1,0 +1,16 @@
+@mixin transition($properties...) {
+    // transition-property по-умолчанию равно значению all
+  
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @if length($properties) > 0 {
+      transition-property: $properties;
+    }
+  }
+  
+  @mixin font($fontsize, $fontweight, $lineheight, $letterspacing) {
+    font-size: $fontsize;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+    letter-spacing: $letterspacing;
+}

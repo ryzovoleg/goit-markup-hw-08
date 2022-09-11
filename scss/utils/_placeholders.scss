@@ -1,0 +1,13 @@
+%flexcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  %buttonbase {
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+}

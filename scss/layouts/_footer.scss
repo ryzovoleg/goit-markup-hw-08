@@ -1,0 +1,66 @@
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--background-color-secondary);
+  }
+  
+  .container--baseline {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .footer__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .footer__socials-container {
+    flex-grow: 1;
+    margin-right: 93px;
+  }
+  
+  .fcontacts__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
+  
+  .fcontacts__link {
+    display: inline-block;
+  
+    @include font(14px, 400, 1.71, 0.03em);
+  
+    color: var(--description-font-color);
+  }
+  
+  .fcontacts__link--white {
+    color: var(--secondary-font-color);
+  }
+  
+  .footer__text {
+    @include font(14px, 700, 1.14, 0.03em);
+    text-transform: uppercase;
+    color: var(--secondary-font-color);
+    margin-bottom: 20px;
+  }
+  
+  .socials__link--inverse {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-font-color);
+  
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color);
+    }
+  }
+  
+  .footer__contacts-container {
+    margin-right: 70px;
+  }
+  
+  .footer__btn {
+    @extend %flexcenter;
+  }
+  
+  .footer__btn-icon {
+    fill: var(--secondary-font-color);
+    margin-left: 10px;
+}
