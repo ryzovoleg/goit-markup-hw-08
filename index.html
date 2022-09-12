@@ -18,7 +18,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
 
@@ -26,12 +25,36 @@
     <!--HEADER-->
     <header class="header">
       <div class="container header__container">
-        <a class="logo header__logo" href="./index.html" lang="en"
-          >Web<span class="logo__black">Studio</span></a
-        >
         <nav class="navigation">
-          <ul class="navigation__list">
-            <li class="navigation__item">
+            <a class="logo header__logo" href="./index.html" lang="en"
+            >Web<span class="logo__black">Studio</span></a
+          >
+            <button
+            type="button"
+            class="navigation__button"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            data-menu-button
+          >
+            <svg
+              class="navigation__icon"
+              width="40"
+              height="40"
+              aria-label="Переключатель мобильного меню"
+            >
+              <use
+                class="navigation__icon--cross"
+                href="./images/icons/sprite.svg#close"
+              ></use>
+              <use
+                class="navigation__icon--menu"
+                href="./images/icons/sprite.svg#menu"
+              ></use>
+            </svg>
+          </button>
+          <div class="navigation__menu" id="menu-container" data-menu>
+            <ul class="navigation__list">
+              <li class="navigation__item">
               <a
                 class="navigation__link navigation__link--current"
                 href="./index.html"
@@ -39,34 +62,83 @@
               >
             </li>
             <li class="navigation__item">
-              <a class="navigation__link" href="./portfolio.html">Портфолио</a>
+              <a class="navigation__link" href="./portfolio.html"
+              >Портфолио</a
+              >
             </li>
             <li class="navigation__item">
               <a class="navigation__link" href="">Контакты</a>
             </li>
           </ul>
-        </nav>
-        <ul class="hcontacts">
-          <li class="hcontacts__item">
-            <a class="hcontacts__link" href="mailto:info@devstudio.com">
-              <svg class="hcontacts__icon" width="16" height="12">
+
+        <ul class="header-contacts">
+          <li class="headef-contacts__item">
+            <a 
+            class="header-contacts__link" 
+            href="mailto:info@devstudio.com"
+            >
+              <svg class="header-contacts__icon" width="16" height="12">
                 <use href="./images/icons/sprite.svg#envelope"></use>
               </svg>
               info@devstudio.com</a
             >
           </li>
-          <li class="hcontacts__item">
-            <a class="hcontacts__link" href="tel:+380961111111">
-              <svg class="hcontacts__icon" width="10" height="16">
+          <li class="header-contacts__item">
+            <a 
+            class="hcontacts__link" 
+            href="tel:+380961111111"
+            >
+              <svg class="header-contacts__icon" width="10" height="16">
                 <use href="./images/icons/sprite.svg#smartphone"></use>
               </svg>
               +380961111111</a
             >
           </li>
         </ul>
-      </div>
-    </header>
-    <main>
+
+        <ul class="header-socials">
+            <li class="header-socials__item">
+                <a 
+                class="header-socials__link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram</a
+                >
+            </li>
+            <li class="header-socials__item">
+              <a
+                class="header-socials__link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Twitter</a
+              >
+            </li>
+            <li class="header-socials__item">
+              <a
+                class="header-socials__link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Facebook</a
+              >
+            </li>
+            <li class="header-socials__item">
+              <a
+                class="header-socials__link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Linkedin</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
       <!--HERO-->
       <section class="hero">
         <div class="container">
@@ -82,25 +154,19 @@
           <h2 class="section__title visually-hidden">Наши преимущества</h2>
           <ul class="advantages">
             <li class="advantages__item">
-              <div class="advantages__wrapper">
-                <svg width="70" height="70">
+                <svg class="advantages__icon" width="70" height="70">
                   <use href="./images/icons/sprite.svg#antenna"></use>
                 </svg>
-              </div>
-              <h3 class="advantages__title uppercase-title">
-                Внимание к деталям
-              </h3>
+              <h3 class="advantages__title uppercase-title">Внимание к деталям</h3>
               <p class="advantages__text">
                 Идейные соображения, а также начало повседневной работы по
                 формированию позиции.
               </p>
             </li>
             <li class="advantages__item">
-              <div class="advantages__wrapper">
-                <svg width="70" height="70">
+                <svg class="advantages__icon" width="70" height="70">
                   <use href="./images/icons/sprite.svg#clock"></use>
                 </svg>
-              </div>
               <h3 class="advantages__title uppercase-title">Пунктуальность</h3>
               <p class="advantages__text">
                 Задача организации, в особенности же рамки и место обучения
@@ -108,11 +174,9 @@
               </p>
             </li>
             <li class="advantages__item">
-              <div class="advantages__wrapper">
-                <svg width="70" height="70">
+                <svg class="advantages__icon" width="70" height="70">
                   <use href="./images/icons/sprite.svg#diagram"></use>
                 </svg>
-              </div>
               <h3 class="advantages__title uppercase-title">Планирование</h3>
               <p class="advantages__text">
                 Равным образом консультация с широким активом в значительной
@@ -120,14 +184,10 @@
               </p>
             </li>
             <li class="advantages__item">
-              <div class="advantages__wrapper">
-                <svg width="70" height="70">
+                <svg class="advantages__icon" width="70" height="70">
                   <use href="./images/icons/sprite.svg#astronaut"></use>
                 </svg>
-              </div>
-              <h3 class="advantages__title uppercase-title">
-                Современные технологии
-              </h3>
+              <h3 class="advantages__title uppercase-title">Современные технологии</h3>
               <p class="advantages__text">
                 Значимость этих проблем настолько очевидна, что реализация
                 плановых заданий.
@@ -144,45 +204,99 @@
             <li class="what-we-do__item">
               <a class="link" href="">
                 <div class="what-we-do__thumb">
-                  <img
-                    src="./images/main/what-we-do-1.jpg"
-                    alt="Верстка"
-                    width="370"
-                    height="294"
-                  />
-                  <p class="what-we-do__text uppercase-title">
-                    Десктопные приложения
-                  </p>
+                    <picture>
+                        <source
+                          media="(min-width: 1200px)"
+                          srcset="
+                            ./images/main/what-do-1_desktop@1x.webp 1x,
+                            ./images/main/what-do-1_desktop@2x.webp 2x
+                          "
+                          type="image/webp"
+                        />
+                        <source
+                          media="(min-width: 1200px)"
+                          srcset="
+                            ./images/main/what-do-1_desktop@1x.jpg 1x,
+                            ./images/main/what-do-1_desktop@2x.jpg 2x
+                          "
+                          type="image/jpg"
+                        />
+                        <img
+                          src="./images/main/what-do-1_desktop@1x.jpg"
+                          alt="Верстка"
+                          width="370"
+                          height="294"
+                          loading="lazy"
+                        />
+                      </picture>
+
+                  <p class="what-we-do__text">Десктопные приложения</p>
                 </div>
               </a>
             </li>
             <li class="what-we-do__item">
               <a class="link" href="">
                 <div class="what-we-do__thumb">
-                  <img
-                    src="./images/main/what-we-do-2.jpg"
-                    alt="Дизайн"
-                    width="370"
-                    height="294"
-                  />
-                  <p class="what-we-do__text uppercase-title">
-                    Мобильные приложения
-                  </p>
+                    <picture>
+                        <source
+                          media="(min-width: 1200px)"
+                          srcset="
+                            ./images/main/what-do-2_desktop@1x.webp 1x,
+                            ./images/main/what-do-2_desktop@2x.webp 2x
+                          "
+                          type="image/webp"
+                        />
+                        <source
+                          media="(min-width: 1200px)"
+                          srcset="
+                            ./images/main/what-do-2_desktop@1x.jpg 1x,
+                            ./images/main/what-do-2_desktop@2x.jpg 2x
+                          "
+                          type="image/jpg"
+                        />
+                        <img
+                          src="./images/main/what-do-2_desktop@1x.jpg"
+                          alt="Дизайн"
+                          width="370"
+                          height="294"
+                          loading="lazy"
+                        />
+                      </picture>
+
+                  <p class="what-we-do__text">Мобильные приложения</p>
                 </div>
               </a>
             </li>
             <li class="what-we-do__item">
               <a class="link" href="">
                 <div class="what-we-do__thumb">
-                  <img
-                    src="./images/main/what-we-do-3.jpg"
-                    alt="Оформление"
-                    width="370"
-                    height="294"
-                  />
-                  <p class="what-we-do__text uppercase-title">
-                    Дизайнерские решения
-                  </p>
+                    <picture>
+                        <source
+                          media="(min-width: 1200px)"
+                          srcset="
+                            ./images/main/what-do-3_desktop@1x.webp 1x,
+                            ./images/main/what-do-3_desktop@2x.webp 2x
+                          "
+                          type="image/webp"
+                        />
+                        <source
+                          media="(min-width: 1200px)"
+                          srcset="
+                            ./images/main/what-do-3_desktop@1x.jpg 1x,
+                            ./images/main/what-do-3_desktop@2x.jpg 2x
+                          "
+                          type="image/jpg"
+                        />
+                        <img
+                          src="./images/main/what-do-3_desktop@1x.jpg"
+                          alt="Оформление"
+                          width="370"
+                          height="294"
+                          loading="lazy"
+                        />
+                      </picture>
+
+                  <p class="what-we-do__text">Дизайнерские решения</p>
                 </div>
               </a>
             </li>
