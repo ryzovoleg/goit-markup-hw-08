@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --main-font: "Roboto", sans-serif;
   --logo-font: "Raleway", sans-serif;
@@ -24,9 +23,7 @@
   overflow: hidden;
 }
 
-.socials, .socials__link, .close-btn, .modal-form__policy, .modal-form__custom-checkbox, .header__container,
-.navigation,
-.navigation__list, .hcontacts, .hcontacts__link, .advantages__wrapper, .what-we-do__text, .team, .clients, .clients__link, .footer__btn, .portfolio-nav, .projects__overlay {
+.socials, .socials__link, .close-btn, .modal-form__policy, .modal-form__custom-checkbox, .navigation__button, .what-we-do__text, .clients__link, .projects__overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,8 +51,15 @@ body {
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media  screen and (min-width: 1200px) {
+    .section {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
 }
 
 .section__title {
