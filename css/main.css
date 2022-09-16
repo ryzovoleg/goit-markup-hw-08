@@ -591,7 +591,7 @@ address {
         padding: 48px 40px;
         width: 100%;
         height: 100%;
-        border-color: #fff;
+        background-color: #fff;
     }
     .navigation__menu.is-open {
         display: -webkit-box;
@@ -641,7 +641,7 @@ address {
   letter-spacing: 0.02em;
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
-          -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-property: color;
   transition-property: color;
@@ -685,7 +685,7 @@ address {
 
 @media screen and (max-width: 767.98px) {
 .navigation__item:not(:last-child) {
-  margin-right: 32px;
+  margin-bottom: 32px;
     }
 }
 
@@ -935,7 +935,7 @@ address {
 
 @media screen and (min-width: 767.98px) {
 .advantages__item:not(:last-child) {
-  margin-right: 30px;
+  margin-bottom: 30px;
     }
 }
 
