@@ -1,89 +1,259 @@
 .header {
+    position: relative;
     border-bottom: 1px solid #ececec;
-    /*outline: 1px solid tomato;*/
   }
   
   .header__logo {
+    display: block;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    @include md(tablet) {
+        margin-right: 88px;
+  }
+  @include md(desktop) {
     margin-right: 93px;
   }
+}
+
+.header__container {
+    position: relative;
+  }
   
-  .header__container,
-  .navigation,
+  .navigation__button {
+    position: absolute;
+    z-index: 2;
+
+    top: 10px;
+    right: 10px;
+
+    display: inline-flex;
+    @extend %flexcentr;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-color: transparent;
+
+    @include md(tablet) {
+        display: none;
+    }
+  }
+    
+.navigation__icon {
+    @include transition(fill);
+    &:hover,
+    &:focus {
+      fill: var(--accent-color);
+    }
+  }
+  
+  .navigation__icon--cross {
+    display: none;
+  
+    .navigation__button.is-open & {
+      display: block;
+    }
+  }
+  
+  .navigation__button.is-open .navigation__icon--menu {
+    display: none;
+  }
+  
+  .navigation {
+    @include mq(tablet) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .navigation__menu {
+    display: none;
+    z-index: 1;
+  
+    @include mq(mobile-only) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 48px 40px;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+  
+      &.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  
+    @include mq(tablet) {
+      display: flex;
+      align-items: center;
+
+    }
+  }
+  
   .navigation__list {
-    @extend %flexcenter;
+    @include mq(tablet) {
+      display: flex;
+      margin-right: 84px;
+    }
+    @include mq(desktop) {
+      display: flex;
+      margin-right: 305px;
+    }
   }
   
   .navigation__link {
-    position: relative;
-    padding-top: 32px; /* поставил padding и сюда (помимо всей секции) , чтоб расширить область при наведении курсора */
-    padding-bottom: 32px;
-  
     color: var(--primary-font-color);
-  
-    @include font(14px, 500, 1.14, 0.02em);
+    @include font(40px, 500, 1.18, 0.02em);
     @include transition(color);
   
     &:hover,
     &:focus {
       color: var(--accent-color);
+    }
+  
+    @include mq(tablet) {
+      position: relative;
+      display: block;
+      @include font(14px, 500, 1.14, 0.02em);
+      padding-top: 32px;
+      padding-bottom: 32px;
     }
   }
   
   .navigation__link--current {
     color: var(--accent-color);
+    @include mq(tablet) {
+      &::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
   
-    &::after {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-  
-      display: block;
-      content: "";
-      width: 100%;
-      height: 4px;
-      background-color: var(--accent-color);
-      border-radius: 2px;
-      margin-bottom: -1px;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 4px;
+        background-color: var(--accent-color);
+        border-radius: 2px;
+        margin-bottom: -1px;
+      }
     }
   }
   
   .navigation__item {
-    margin-right: 50px;
+    @include mq(mobile-only) {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
   
-    &:last-child {
-      margin-right: 0;
+    @include mq(tablet) {
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
     }
   }
   
-  .hcontacts__item {
-    margin-right: 50px;
+  .header-contacts {
+    @include mq(mobile-only) {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: auto;
+      margin-bottom: 64px;
+    }
   
-    &:last-child {
-      margin-right: 0;
+  
+    @include mq(desktop) {
+      display: flex;
     }
   }
   
-  .hcontacts {
-    @extend %flexcenter;
-    margin-left: auto;
+  .header-contacts__item {
+    @include mq(mobile-only) {
+      &:last-child {
+        margin-bottom: 32px;
+        font-size: 40px;
+      }
+    }
+  
+    @include mq(tablet-only) {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  
+    @include mq(desktop) {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
   }
   
-  .hcontacts__link {
-    padding-top: 32px;
-    padding-bottom: 32px;
+  .header-contacts__link {
     color: var(--description-font-color);
-  
-    @extend %flexcenter;
-    @include font(14px, 500, 1.14, 0.02em);
     @include transition(color);
   
-    &:hover,
-    &:focus {
+    @include mq(mobile-only) {
+      @include font(24px, 500, 1.18, 0.02em);
+    }
+  
+    @include mq(tablet) {
+      display: flex;
+      align-items: center;
+      height: 14px;
+  
+      @include font(12px, 500, 1.17, 0.02em);
+    }
+  
+    @include mq(desktop) {
+      font-size: 14px;
+      height: 16px;
+    }
+  }
+  
+  .header-contacts__link--fontsize {
+    @include mq(mobile-only) {
+      font-size: 40px;
       color: var(--accent-color);
     }
   }
   
-  .hcontacts__icon {
-    margin-right: 10px;
+  .header-contacts__icon {
     fill: currentColor;
-}
+    @include mq(mobile-only) {
+      display: none;
+    }
+    @include mq(tablet) {
+      margin-right: 8px;
+    }
+    @include mq(desktop) {
+      margin-right: 10px;
+    }
+  }
+  
+  .header-socials {
+    display: flex;
+    flex-wrap: wrap;
+  
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+  
+  .header-socials__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  
+    &:not(:last-child).header-socials__item::after {
+      content: "";
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      transform: rotate(90deg);
+      margin-left: 10px;
+    }
+  }
+  
+  .header-socials__link {
+    @include font(18px, 500, 1.22, 0.02em);
+    color: var(--accent-color);
+  }
