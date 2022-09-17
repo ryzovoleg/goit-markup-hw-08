@@ -122,9 +122,9 @@ address {
     }
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 768px) {
     .container {
-        width: 780px;
+        width: 768px;
     }
 }
 
@@ -323,7 +323,6 @@ address {
 
 .modal-form__input {
   width: 100%;
-  /* height: 40px; */
   padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -536,7 +535,7 @@ address {
     border-color: transparent;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
     .navigation__button {
         display: none;
     }
@@ -547,8 +546,8 @@ address {
           transition-duration: 250ms;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition-property: color;
-  transition-property: color;
+  -webkit-transition-property: fill;
+  transition-property: fill;
 }
 
 .navigation__icon:hover, .navigation__icon:focus {
