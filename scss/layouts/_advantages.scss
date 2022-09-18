@@ -1,3 +1,5 @@
+
+
 .advantages {
     @include md(tablet) {
         display: flex;
@@ -8,15 +10,15 @@
   .advantages__item {
     @include md(mobile-only) {
         &:not(:last-child) {
-          margin-right: 30px;
-        }
+          margin-bottom: 30px;
+     }
     }
 
     @include md(tablet) {
         margin-right: 30px;
     }
 
-    @include md(mobile-only) {
+    @include md(tablet-only) {
         flex-basis: calc((100% - 30px) / 2);
         margin-right: 30px;
 
@@ -68,9 +70,3 @@
     width: 100%;
     background-color: var(--background-color-additional);
 }
-
-
-
-
-
-
