@@ -1,19 +1,48 @@
 .portfolio-nav {
-    @extend %flexcenter;
-    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  
+    @include mq(tablet-only) {
+      margin-bottom: 30px;
+    }
+  
+    @include mq(desktop) {
+      margin-bottom: 50px;
+      justify-content: center;
+    }
   }
   
-  .portfolio-nav__item:not(:last-child) {
-    margin-right: 8px;
+  .portfolio-nav__item {
+    @include mq(mobile-only) {
+      &:nth-child(-n + 3) {
+        margin-bottom: 15px;
+      }
+    }
+  
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
   }
   
   .projects {
-    display: flex;
-    flex-wrap: wrap;
+    @include mq(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
   
   .projects__link {
-    display: block;
+    @include mq(tablet-only) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+  
+  .projects__item {
+    background: var(--background-color-primary);
+  
     @include transition(box-shadow);
   
     &:hover,
@@ -21,19 +50,46 @@
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
     }
+  
+    @include mq(not-desktop) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  
+    @include mq(tablet) {
+      margin-right: 30px;
+    }
+  
+    @include mq(tablet-only) {
+      flex-basis: calc((100% - 30px) / 2);
+      margin-right: 30px;
+  
+      &:nth-child(2n),
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  
+    @include mq(desktop) {
+      flex-basis: calc((100% - 60px) / 3);
+  
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &:nth-child(-n + 6) {
+        margin-bottom: 30px;
+      }
+    }
   }
   
-  .projects__item {
-    flex-basis: calc((100% - 60px) / 3);
-    margin-right: 30px;
-    margin-bottom: 30px;
-    background: var(--background-color-primary);
-  
-    &:nth-child(3n) {
-      margin-right: 0;
+  // изображения: фиксированная ширина 450px для мобильных устройств, для планшета и десктопа width 100%
+  .projects__img {
+    @include mq(mobile-only) {
+      width: 450px;
     }
-    &:nth-last-child(-n + 3) {
-      margin-bottom: 0;
+    @include mq(tablet) {
+      width: 100%;
     }
   }
   
@@ -59,8 +115,8 @@
     transform: translateY(100%);
     @include transition(transform);
   
-    .projects__link:hover &,
-    .projects__link:focus & {
+    .projects__item:hover &,
+    .projects__item:focus & {
       transform: translateY(0);
     }
   }
@@ -69,6 +125,10 @@
     padding: 20px 24px;
     border: 1px solid #eeeeee;
     border-top: 0;
+  
+    @include mq(tablet-only) {
+      flex-grow: 1;
+    }
   }
   
   .projects__name {
@@ -80,5 +140,7 @@
   
   .projects__descr {
     color: var(--description-font-color);
+    @include font(16px, 400, 1.88, 0.03em);
+  }
     @include font(16px, 400, 1.88, 0.03em);
 }
