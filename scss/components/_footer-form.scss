@@ -1,12 +1,23 @@
 .footer-form {
-    display: flex;
+    @include mq(desktop) {
+      display: flex;
+    }
   }
   
   .footer-form__input {
-    width: 358px;
-    /* height: 50px; */
-    margin-right: 12px;
+    height: 50px;
     padding: 16px 15px;
+    width: 100%;
+    @include font(16px, 400, 1.25, 0.03em);
+  
+    @include mq(desktop) {
+      min-width: 358px;
+      margin-right: 12px;
+    }
+  
+    @include mq(not-desktop) {
+      margin-bottom: 20px;
+    }
   
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -14,4 +25,4 @@
     background-color: transparent;
     outline: transparent;
     color: #ffffff;
-}
+  

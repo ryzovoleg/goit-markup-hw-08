@@ -1,8 +1,11 @@
 .logo {
     font-family: var(--logo-font);
     color: var(--accent-color);
+    @include font(24px, 700, 1.17, 0.03em);
   
-    @include font(26px, 700, 1.19, 0.03em);
+    @include mq(desktop) {
+      @include font(26px, 700, 1.19, 0.03em);
+    }
   }
   
   .logo__black {
@@ -11,4 +14,4 @@
   
   .logo__white {
     color: var(--secondary-font-color);
-}
+  }
