@@ -464,7 +464,7 @@ address {
   }
 }
 
-@media screen and (min-width: 1199.98px) {
+@media screen and (max-width: 1199.98px) {
 .footer-form__input {
   margin-bottom: 20px;
   }
@@ -583,7 +583,7 @@ address {
     z-index: 1;
 }
 
-@media screen and (min-width: 767.98px) {
+@media screen and (max-width: 767.98px) {
     .navigation__menu {
         position: fixed;
         top: 0;
@@ -933,7 +933,7 @@ address {
     }
 }
 
-@media screen and (min-width: 767.98px) {
+@media screen and (min-width: 768px) {
 .advantages__item:not(:last-child) {
   margin-bottom: 30px;
     }
