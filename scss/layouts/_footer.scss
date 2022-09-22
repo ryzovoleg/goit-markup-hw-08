@@ -1,4 +1,4 @@
-
+/* ----- FOOTER ----- */
 
 .footer {
     padding-top: 60px;
@@ -7,44 +7,44 @@
   }
   
   .footer__container {
-   @include md(not-desktop) {
-    text-align: center;
-   }
-
-   @include md(tablet) {
-    display: flex;
-    align-items: baseline;
-   }
-
-   @include md(tablet-only) {
-    flex-wrap: wrap;
-    justify-content: space-around;
-   }
-}
-
-.footer__contacts-container {
-    @include md(mobile-only) {
-        margin-bottom: 60px;
+    @include mq(not-desktop) {
+      text-align: center;
     }
-
-    @include md(desktop) {
-        margin-right: 70px;
+  
+    @include mq(tablet) {
+      display: flex;
+      align-items: baseline;
     }
-}
-
+  
+    @include mq(tablet-only) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+  
+  .footer__contacts-container {
+    @include mq(mobile-only) {
+      margin-bottom: 60px;
+    }
+  
+    @include mq(desktop) {
+      margin-right: 70px;
+    }
+  }
+  
   .footer__logo {
     display: inline-block;
     margin-bottom: 20px;
   }
   
   .footer__socials-container {
-    @include md(desktop) {
-        flex-grow: 1;
-        margin-right: 93px;
+    @include mq(desktop) {
+      flex-grow: 1;
+      margin-right: 93px;
     }
   }
-
-    .fcontacts__item:not(:last-child) {
+  
+  .fcontacts__item:not(:last-child) {
     margin-bottom: 9px;
   }
   
@@ -79,17 +79,17 @@
   
   .footer__form-container {
     @include mq(not-desktop) {
-    margin-top: 60px;
+      margin-top: 60px;
+    }
   }
-}
   
   .footer__btn {
-display: inline-flex;
-padding: 13px 28px;
-height: 50px;
+    display: inline-flex;
+    padding: 13px 28px;
+    height: 50px;
   }
   
   .footer__btn-icon {
     fill: var(--secondary-font-color);
     margin-left: 10px;
-}
+  }
