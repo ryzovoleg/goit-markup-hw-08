@@ -1,3 +1,5 @@
+/* ----- HEADER ----- */
+
 .header {
     position: relative;
     border-bottom: 1px solid #ececec;
@@ -7,38 +9,53 @@
     display: block;
     padding-top: 16px;
     padding-bottom: 16px;
-    @include md(tablet) {
-        margin-right: 88px;
+    @include mq(tablet) {
+      margin-right: 88px;
+    }
+    @include mq(desktop) {
+      margin-right: 93px;
+    }
   }
-  @include md(desktop) {
-    margin-right: 93px;
-  }
-}
-
-.header__container {
+  
+  // .header__container {
+  // жестко фиксируем высоту контейнера, чтоб не задавать верхние и нижние отступы
+  // на остальные элементы, как например ссылки, зададим padding
+  
+  // height: 60px;
+  // @include mq(tablet) {
+  //   height: 80px;
+  // }
+  // }
+  
+  .header__container {
     position: relative;
   }
   
   .navigation__button {
     position: absolute;
     z-index: 2;
-
+  
     top: 10px;
     right: 10px;
-
+  
     display: inline-flex;
-    @extend %flexcentr;
+    @extend %flexcenter;
     margin: 0;
     padding: 0;
     border: none;
-    border-color: transparent;
-
-    @include md(tablet) {
-        display: none;
+    background-color: transparent;
+  
+    @include mq(tablet) {
+      display: none;
     }
+  
+    // &:hover .navigation__icon,
+    // &:focus .navigation__icon {
+    //   fill: var(--accent-color);
+    // }
   }
-    
-.navigation__icon {
+  
+  .navigation__icon {
     @include transition(fill);
     &:hover,
     &:focus {
@@ -59,9 +76,17 @@
   }
   
   .navigation {
+    // height: 100%; //  даем 100% от высоты контейнера, display flex, align items, чтоб выровнять все элементы хэдэра по горизонтальной оси
+    // на хэдэр флекс повесить нельзя, так как он не является родителем элементов ul в хэдэре
+    // width: 100%;
+    // padding-top: 16px;
+    // padding-bottom: 16px;
+  
     @include mq(tablet) {
       display: flex;
       align-items: center;
+      // padding-bottom: 26px;
+      // padding-top: 26px;
     }
   }
   
@@ -85,9 +110,9 @@
     }
   
     @include mq(tablet) {
-      display: flex;
+      display: flex; // чтоб стали по горизонтали два ul -  navigations__list и header-contacts
       align-items: center;
-
+      // justify-content: space-between;
     }
   }
   
@@ -113,10 +138,10 @@
     }
   
     @include mq(tablet) {
-      position: relative;
-      display: block;
+      position: relative; // для позиционирования декоративных эффектов (подчеркивание)
+      display: block; // для того, чтобы работали вертикальные паддинги
       @include font(14px, 500, 1.14, 0.02em);
-      padding-top: 32px;
+      padding-top: 32px; // + чтоб область клика была больше
       padding-bottom: 32px;
     }
   }
@@ -162,6 +187,9 @@
       margin-bottom: 64px;
     }
   
+    // @include mq(tablet) {
+    //   margin-left: auto; не работает, так как не задана ширина у div.navigation__menu
+    // }
   
     @include mq(desktop) {
       display: flex;
@@ -198,9 +226,9 @@
     }
   
     @include mq(tablet) {
-      display: flex;
+      display: flex; // для того, чтобы выровнять по высоте иконку и текст ссылки
       align-items: center;
-      height: 14px;
+      height: 14px; // жестко задаем высоту всей строки согласно макета (текст и иконка одинаковой высоты)
   
       @include font(12px, 500, 1.17, 0.02em);
     }
@@ -219,7 +247,8 @@
   }
   
   .header-contacts__icon {
-    fill: currentColor;
+    fill: currentColor; // унаследовать цвет у класса .header-contacts__link
+    height: 100%; // для того, чтобы иконка заняла всю высоту строки
     @include mq(mobile-only) {
       display: none;
     }
